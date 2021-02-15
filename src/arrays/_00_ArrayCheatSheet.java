@@ -30,8 +30,11 @@ public class _00_ArrayCheatSheet {
 			System.out.println(fifty[i]);
 		}
 		//8. without printing the entire array, print only the smallest number in the array
+		int small = fifty[0];
 		for (int i = 0; i < fifty.length; i++) {
+		
 			
+		
 		}
 		//9 print the entire array to see if step 8 was correct
 		
