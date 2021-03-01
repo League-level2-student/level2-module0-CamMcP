@@ -26,6 +26,7 @@ robs[3].setX(650);
 robs[3].setY(550);
 robs[4].setX(850);
 robs[4].setY(550);
+
 		//4. make each robot start at the bottom of the screen, side by side, facing up
 
 	//5. use another for loop to iterate through the array and make each robot move 
