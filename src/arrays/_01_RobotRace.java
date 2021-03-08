@@ -1,6 +1,9 @@
 package arrays;
 
+import java.awt.datatransfer.SystemFlavorMap;
 import java.util.Random;
+
+import javax.swing.JOptionPane;
 
 import org.jointheleague.graphical.robot.Robot;
 
@@ -11,21 +14,14 @@ public static void main(String[] args) {
 
 	//2. create an array of 5 robots.
 
-Robot[] robs = new Robot[5];
+Robot[] robs = new Robot[10];
 	//3. use a for loop to initialize the robots.
 for (int i = 0; i < robs.length; i++) {
 	robs[i] = new Robot();
+	robs[i].setX(50 + i * 100);
+	robs[i].setY(550);
+	robs[i].setSpeed(15);
 }
-robs[0].setX(50);
-robs[0].setY(550);
-robs[1].setX(250);
-robs[1].setY(550);
-robs[2].setX(450);
-robs[2].setY(550);
-robs[3].setX(650);
-robs[3].setY(550);
-robs[4].setX(850);
-robs[4].setY(550);
 
 		//4. make each robot start at the bottom of the screen, side by side, facing up
 
@@ -33,14 +29,21 @@ robs[4].setY(550);
 	//   a random amount less than 50.
 Random rand = new Random();
 boolean finish = false;
-
 	//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
 while(finish != true){
 	for (int i = 0; i < robs.length; i++) {
-		robs[i].move(rand.nextInt(50));
-		if (robs[i].getY() < -20) {
-			finish = true;
-		}
+		int turn = rand.nextInt(5) +1;
+		for (int j = 0; j < turn; j++) {		
+				robs[i].turn(+5);
+				robs[i].move(5);
+				if (robs[i].getX() == 50 + i * 100 && robs[i].getY() == 550) {
+					finish = true;
+					JOptionPane.showMessageDialog(null, "Congraulations robot " + i + "! You are the winner!");
+					System.exit(0);;
+				}
+		} 
+		
+		
 	}
 }
 
