@@ -33,9 +33,9 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//3.  Ask the user to enter a positive number and convert it to an int
-	String answer =	JOptionPane.showInputDialog("Please input a positive number");
+	String answer =	JOptionPane.showInputDialog("Please input a positive number lower than 2297");
 		//4. Initialize the array of JButtons to be the size of the int created in step 3
-		buttons = new JButton[10];
+		buttons = new JButton[2296];
 		//5. Make a for loop to iterate through the JButton array
 		for (int i = 0; i < buttons.length; i++) {
 			buttons[i] = new JButton();
@@ -53,9 +53,10 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//11. set the JFrame to visible.
 		frame.setVisible(true);
 		//12. Give the user the instructions for the game.
-		
+		JOptionPane.showMessageDialog(null, "You have been previously asked to input a number. A random button less than that has been selected, and you must find it! good luck!");
+		Random rand = new Random();
 		//13. initialize the hiddenButton variable to a random number less than the int created in step 3
-		
+		hiddenButton = rand;
 		//14. Set the text of the JButton located at hiddenButton to  "ME"
 
 		//15. Use Thread.sleep(1000); to pause the program.
