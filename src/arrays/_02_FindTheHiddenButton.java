@@ -33,7 +33,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//3.  Ask the user to enter a positive number and convert it to an int
-	String answer =	JOptionPane.showInputDialog("Please input a positive number lower than 2297");
+	String answer =	JOptionPane.showInputDialog("Please input a positive number lower than 5000");
 	int gg = Integer.parseInt(answer);
 		//4. Initialize the array of JButtons to be the size of the int created in step 3
 		buttons = new JButton[gg];
@@ -59,10 +59,10 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//13. initialize the hiddenButton variable to a random number less than the int created in step 3
 		hiddenButton = rand.nextInt(gg);
 		//14. Set the text of the JButton located at hiddenButton to  "ME"
-
+buttons[hiddenButton].setText("ME");
 		//15. Use Thread.sleep(1000); to pause the program.
 		//    Surround it with a try/catch - use Eclipse helper for this
-		
+		Thread.sleep(1000);
 		//16. Set the text of the JButton located at hiddenButton to be blank.
 		
 	}
